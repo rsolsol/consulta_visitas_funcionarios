@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Consulta Visita a Funcionarios</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+    <meta name="viewport" content="width=device-width; initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/datepicker-es.js"></script>
+    
+</head>
+<body>
+<div class="wrapper">
+    <header class="header">
+        <section class="topbar">
+				<div class="center">
+					<p class="sede">Plataforma virtual - Consulta de Visitas a Funcionarios</p>
+				</div>
+        </section>
+        <section class="navbar">
+            <div class="center">
+                <h1 class="logoAyto"><a href="http://www.munipuentepiedra.gob.pe/"><img alt="Municipalidad de puente piedra" src="http://virtual.munipuentepiedra.gob.pe/consultatramite/img/logo_muni.png" style="height:48px;width:240px;margin-bottom:10px;"></a></h1>
+            </div>
+        </section>
+        <div class="banner">
+            <div class="center">
+                <img alt="" src="images/fondo.jpg">
+            </div>
+        </div>
+    </header>
+    <section class="content">
+       <div class="center">
+            <ul class="breadcrumbs">
+                <li><a href="http://www.munipuentepiedra.gob.pe/">Inicio</a></li>
+                <li><a href="http://virtual.munipuentepiedra.gob.pe/">Plataforma Virtual</a></li>
+                <li><span><em>Visita a Funcionarios</em></span></li>
+            </ul>
+            <div class="content_int">
+                <header>
+                    <h2>VISITAS A FUNCIONARIOS</h2>
+                </header>
+               <div class="form_box form">
+                   <h4>Aviso</h4>
+                   <p class="fields">RECUERDA: Debe elegir la fecha de Inicio y la fecha final de Busqueda. Luego el resultado se descargará automaticamente en formato excel.</p>
+               </div>
+                <form id="frm" method="get" action="php/buscar.php" class="form_box form">	
+                       <h4>Buscar</h4>
+                       <p class="fields">
+                             <label class="label">SELECIONA LA FECHA DE INICIO DE BUSQUEDA&nbsp;:&nbsp;&nbsp;</label>
+                             <span class="field">
+                                 <input type="text" id="fecha1" name="fecha1" placeholder="dd/mm/yyyy" required>
+                             </span>
+                       </p>
+                        <p class="fields">
+                             <label class="label">SELECIONA LA FECHA DE FIN DE BUSQUEDA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp; </label>
+                             <span class="field">
+                                 <input type="text" id="fecha2" name="fecha2" placeholder="dd/mm/yyyy" required>
+                            </span>
+                        </p>
+                        <p class='action'>
+                            <input type="submit" id="submit" name="submit" value="Descargar" class="btn" >
+                        </p>                    
+                </form> 
+            </div>
+        </div>
+    </section>
+</div>
+<br><br>
+    <footer>
+        <div class="center">
+            <ul class="logos">
+                <li><img src="images/logo_muni.gif"></li>
+            </ul>
+            <div class="stamp"><img alt="" src="images/blank.png"></div>
+            <p class="info">
+                Calle 9 de Junio N° 100 - Cercado de Puente Piedra
+                <br>
+                Tlf.:
+                219 - 6200
+                Línea Gratuita:
+                0800-26200
+                <br>
+                Email:
+                <a target="_blank" href="mailto:webmaster@munipuentepiedra.gob.pe">webmaster@munipuentepiedra.gob.pe</a>
+                Dirección web:
+                <a target="_blank" href="http://www.munipuentepiedra.gob.pe">http://www.munipuentepiedra.gob.pe</a>
+            </p>
+            <div class="footer_right">
+			<ul class="footer_links">
+				<li><a href="http://www.munipuentepiedra.gob.pe/index.php?option=com_content&view=article&id=12">Procedimientos Administrativos</a></li>
+				<li><a href="http://www.munipuentepiedra.gob.pe/index.php?option=com_content&view=article&id=167">Sistema de control interno</a></li>
+				<li><a href="http://www.munipuentepiedra.gob.pe/index.php?option=com_content&view=article&id=45">Libro de reclamaciones</a></li>
+			</ul>
+		</div>
+       </div>
+    </footer>    
+</body>
+<!-- scrip que llama a la formacion del calendario ademas aqui damos las caracteristicas del calendario -->
+<script>
+        $("#fecha1, #fecha2").datepicker({
+            changeMonth:true,   /*activa el selector de mes*/
+            changeYear:true,    /*activa el selector de año*/
+            showOn: "button",   /*activa el boton que activa el calendario*/
+            buttonImage: "images/calendar.gif", /*Muestra la imagen que representará al boton de calendario*/
+            buttonImageOnly:true,
+            showButtonPanel:true,
+        });
+    </script>
+</html>
